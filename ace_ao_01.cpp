@@ -1,6 +1,8 @@
 #include <ace/OS.h>
 #include <ace/Task.h>
 
+#include <memory> // auto_ptr
+
 class TaskOne: public ACE_Task<ACE_MT_SYNCH>{
 public:
 	~TaskOne() {
@@ -30,13 +32,12 @@ public:
 
 int main(int argc, char *argv[]){
 	//Create the task
-	TaskOne *one=new TaskOne;
+	std::auto_ptr<TaskOne> one(new TaskOne);
 	//Start up the task
 	one->open(0);
 	//wait for all the tasks to exit
 	ACE_Thread_Manager::instance()->wait();
 	ACE_DEBUG((LM_DEBUG,"(%t) Main Task ends \n"));
-	delete one;
 	return 0;
 }
 

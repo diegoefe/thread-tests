@@ -9,7 +9,6 @@ endif()
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}")
 
-#include(FindACE.cmake)
 find_package(ACE REQUIRED)
 add_library(ace INTERFACE )
 target_link_libraries(ace INTERFACE ${ACE_LIBRARIES})
