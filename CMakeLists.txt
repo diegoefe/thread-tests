@@ -16,3 +16,6 @@ target_include_directories(ace INTERFACE ${ACE_INCLUDE_DIRS})
 
 add_executable(ace01 ace_ao_01.cpp)
 target_link_libraries(ace01 ace)
+
+add_executable(ace02 ace_pc_01.cpp)
+target_link_libraries(ace02 ace)
