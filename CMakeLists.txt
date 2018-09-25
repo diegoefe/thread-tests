@@ -19,3 +19,6 @@ target_link_libraries(ace01 ace)
 
 add_executable(ace02 ace_pc_01.cpp)
 target_link_libraries(ace02 ace)
+
+add_executable(ace03 ace_reactor_01.cpp)
+target_link_libraries(ace03 ace)
